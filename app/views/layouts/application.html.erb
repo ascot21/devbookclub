@@ -24,11 +24,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section id="wrapper" class="row">
-    <header class="twelve columns">
-      <h1><%= link_to "devBookClub", :root %></h1>
-    </header>
+  <header class="row">
+    <div class="twelve columns">
+        <h1><%= link_to "devBookClub", :root %></h1>
+    </div>
+  </header>
+  <section class="row">
+    <nav class="clearfix">
+        <ul class="nav-bar">
+          <li><%= link_to "Create Book", new_book_path %></li>
+        </ul>
+    </nav>
+  </section>
+  <section class="row">
     <section id="main" class="twelve columns">
+      <%- flash.each do |type, message| %>
+      <div class="alert-box"><%= message %><a href="" class="close">&times;</a></div>
+      <%- end %>
       <%= yield %>
     </section>
   </section>

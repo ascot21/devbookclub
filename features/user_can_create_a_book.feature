@@ -7,18 +7,16 @@ Feature: User creates book
   * Book must have title,description and a buy_link
   * Book must be publicly visible once saved
 
-  Background:
-    Given I am signed in
-
+  @wip
   Scenario: Happy Path
     Given I am on the homepage
-    And I click "Write book"
+    And I click "Create Book"
     Then I should see "Fill in your book info here"
     When I fill in "The Pragmatic Programmer" for "Title"
     And I fill in "Description to come soon" for "Description"
-    And I fill in "www.example.com" for "Buy_link"
-    And I press "Publish"
-    Then I should see "Your book has been published"
+    And I fill in "www.example.com" for "Buy link"
+    And I press "Create Book"
+    Then I should see "Your book has been added."
     And I should see the title "The Pragmatic Programmer"
     And I should see "Description to come soon"
     And I should see "Buy the book"
@@ -31,7 +29,7 @@ Feature: User creates book
     And I fill in "Description to come soon" for "Description"
     And I fill in "www.another.com" for "Buy_link"
     And I press "Publish"
-    Then I should not see "Your book has been published"
+    Then I should not see "Your book has been published."
     And I should see "" in the "Title" field
     And I should see "Description to come soon" in the "Description" field
     And I should see "www.another.com" in the "Buy_link" field
@@ -45,7 +43,7 @@ Feature: User creates book
     And I fill in "" for "Description"
     And I fill in "www.anotherexample.com" for "Buy_link"
     And I press "Publish"
-    Then I should not see "Your book has been published"
+    Then I should not see "Your book has been published."
     And I should see "This is a title" in the "Title" field
     And I should see "" in the "Description" field
     And I should see "www.anotherexample.com" in the "Buy_link" field
