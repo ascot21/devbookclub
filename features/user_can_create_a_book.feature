@@ -29,12 +29,12 @@ Feature: User creates book
     Then I should see "Fill in your blog book here"
     When I fill in "" for "Title"
     And I fill in "Description to come soon" for "Description"
-    And I fill in "www.example.com" for "Buy_link"
+    And I fill in "www.another.com" for "Buy_link"
     And I press "Publish"
     Then I should not see "Your book has been published"
     And I should see "" in the "Title" field
     And I should see "Description to come soon" in the "Description" field
-    And I should see "Buy the book" in the "Buy_link" field
+    And I should see "www.another.com" in the "Buy_link" field
     And I should see "Title can't be blank"
 
   Scenario: User attempts to skip Description
@@ -43,12 +43,12 @@ Feature: User creates book
     Then I should see "Fill in your blog book here"
     When I fill in "The Pragmatic Programmer" for "Title"
     And I fill in "" for "Description"
-    And I fill in "www.example.com" for "Buy_link"
+    And I fill in "www.anotherexample.com" for "Buy_link"
     And I press "Publish"
     Then I should not see "Your book has been published"
     And I should see "This is a title" in the "Title" field
     And I should see "" in the "Description" field
-    And I should see "Buy the book" in the "Buy_link" field
+    And I should see "www.anotherexample.com" in the "Buy_link" field
     And I should see "Description can't be blank"
 
   Scenario: User attempts to skip Buy link
