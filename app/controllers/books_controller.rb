@@ -16,6 +16,15 @@ class BooksController < ApplicationController
     end
   end
 
+  def update
+    if @book.update_attributes(params[:book])
+      redirect_to @book
+    else
+      flash[:error] = @book.errors.full_messages.join
+      render :edit
+    end
+  end
+
   protected
 
   def lookup_book

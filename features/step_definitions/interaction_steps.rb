@@ -11,7 +11,11 @@ Then /^I should not see "(.*?)"$/ do |expected_text|
 end
 
 Then /^I should see the title "(.*?)"$/ do |title_text|
-  page.should have_css("h1, h2", text: title_text)
+  page.should have_css("h1, h2, h3", text: title_text)
+end
+
+Then /^I should see the link "(.*?)"$/ do |title_text|
+  page.should have_css("a", text: title_text)
 end
 
 Then /^I should see the alert "(.*?)"$/ do |title_text|
