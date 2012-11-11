@@ -1,7 +1,9 @@
 Devbookclub::Application.routes.draw do
   root :to => 'home#index'
 
-  resources :books, :except => :destroy
+  resources :books do
+    resources :topics
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

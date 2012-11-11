@@ -1,1 +1,32 @@
-<%= render @book %>
+<div class="eight columns">
+  <div class="row book">
+    <div class="four columns">
+      <img src="http://placehold.it/200x300">
+      <a href="<%= url_for(@book.buy_link) %>" target="blank">Buy the Book</a>
+    </div>
+    <div class="eight columns">
+      <h3 class="subheader"><%= @book.title %></h3>
+      <p><%= @book.description[0..500] %></p>
+    </div>
+  </div>
+  <div class="">
+      <h4>Topics</h4>
+      <p><%= link_to "Add Topic", new_book_topic_path(@book), :class => "right" %></p>
+      <table class="twelve">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Comments</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @topics %>
+        </tbody>
+        </table>
+  </div>
+</div>
+<div class="four columns panel">
+  recent comments will go here
+</div>

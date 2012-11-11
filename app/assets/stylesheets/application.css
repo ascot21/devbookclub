@@ -11,6 +11,7 @@
  *= require_self
  *= require foundation_and_overrides
  *= require layout_styles
+ *= require book
  *= require_tree .
  */
 

@@ -25,11 +25,16 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    @topic = Topic.new
+  end
+
   protected
 
   def lookup_book
     if params[:id]
       @book = Book.find(params[:id])
+      @topics = @book.topics
     else
       @book = Book.new(params[:book])
     end

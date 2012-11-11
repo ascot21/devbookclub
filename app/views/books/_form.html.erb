@@ -1,9 +1,9 @@
 <%= form_for @book do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :placeholder => "Title Goes Here" %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description, :placeholder => "The synopsis/overview of the book goes here." %>
   <%= f.label :buy_link %>
-  <%= f.text_field :buy_link %>
+  <%= f.text_field :buy_link, :size => 20, :placeholder => "http://www.example.com" %>
   <%= f.submit submit_text%>
 <%- end %>
