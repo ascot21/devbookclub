@@ -37,8 +37,8 @@
         </ul>
     </nav>
   </section>
-  <section class="row">
-    <section id="main" class="twelve columns">
+  <section id="main" class="row">
+    <section class="twelve columns">
       <%- flash.each do |type, message| %>
         <% if type == :error %>
           <div class="alert-box alert"><%= message %><a href="" class="close">&times;</a></div>
