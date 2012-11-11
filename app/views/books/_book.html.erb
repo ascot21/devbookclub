@@ -1,3 +1,8 @@
-<li>
-  <%= link_to image_tag("http://placehold.it/200x259"), book, :class => "bookimg has-tip tip-top noradius", :title => book.title %>
+<li class="booklist">
+  <div class="img-wrap">
+    <%= link_to image_tag("book_placeholder.jpg"), book, :class => "bookimg" %>
+    <div class="img-overlay">
+      <span><%= book.title %></span>
+    </div>
+  </div>
 </li>
