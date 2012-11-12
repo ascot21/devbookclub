@@ -1,2 +1,22 @@
-<h3><%= @topic.title %></h3>
-<p><%= @topic.description %></p>
+<div class="eight columns">
+  <div class="row book">
+    <div class="four columns">
+      <img src="http://placehold.it/200x300">
+      <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+    </div>
+    <div class="eight columns">
+      <h3 class="subheader"><%= @book.title %></h3>
+      <p><%= @book.description[0..500] %></p>
+      <a href="<%= url_for(@book.buy_link) %>" class="right" target="blank">Buy the Book</a>
+    </div>
+  </div>
+  <div class="">
+    <h4>Topic</h4>
+      <h5><%= @topic.title %></h5>
+      <p><%= @topic.body %></p>
+  </div>
+</div>
+<div class="four columns panel">
+  <h5>Other Topics Of This Book</h5>
+  <%= render :partial => "topic_list", :object => @book.topics.related %>
+</div>

@@ -25,12 +25,12 @@ Feature: User creates book
     And I click "New Book"
     Then I should see "Fill in your book info here"
     When I fill in "" for "Title"
-    And I fill in "Description to come soon" for "Description"
+    And I fill in "Description to come" for "Description"
     And I fill in "www.another.com" for "Buy link"
     And I press "Create Book"
     Then I should not see "Your book has been published."
     And I should see "" in the "Title" field
-    And I should see "Description to come soon" in the "Description" field
+    And I should see "Description to come" in the "Description" field
     And I should see "www.another.com" in the "Buy link" field
     And I should see "Title can't be blank"
 
@@ -53,11 +53,11 @@ Feature: User creates book
     And I click "New Book"
     Then I should see "Fill in your book info here"
     When I fill in "The Pragmatic Programmer Third Edition" for "Title"
-    And I fill in "Description to come soon" for "Description"
+    And I fill in "Description coming soon" for "Description"
     And I fill in "" for "Buy link"
     And I press "Create Book"
     Then I should not see "Your book has been published"
     And I should see "The Pragmatic Programmer Third Edition" in the "Title" field
-    And I should see "Description to come soon" in the "Description" field
+    And I should see "Description coming soon" in the "Description" field
     And I should see "" in the "Buy link" field
     And I should see "Buy link can't be blank"

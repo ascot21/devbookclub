@@ -2,11 +2,12 @@
   <div class="row book">
     <div class="four columns">
       <img src="http://placehold.it/200x300">
-      <a href="<%= url_for(@book.buy_link) %>" target="blank">Buy the Book</a>
+      <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
     </div>
     <div class="eight columns">
       <h3 class="subheader"><%= @book.title %></h3>
       <p><%= @book.description[0..500] %></p>
+      <a href="<%= url_for(@book.buy_link) %>" class="right" target="blank">Buy the Book</a>
     </div>
   </div>
   <div class="">
