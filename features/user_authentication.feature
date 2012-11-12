@@ -15,6 +15,7 @@ Feature: User authentication
   Scenario: Signing up
     Given I am on the homepage
     When I click "Sign Up"
+    And I fill in "eliza" for "Username"
     And I fill in "eliza@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
@@ -24,6 +25,7 @@ Feature: User authentication
   Scenario: Signing up with non-matching passwords
     Given I am on the homepage
     When I click "Sign Up"
+    And I fill in "eliza" for "Username"
     And I fill in "eliza@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "notfoobar" for "Password confirmation"
@@ -31,22 +33,22 @@ Feature: User authentication
     Then I should see "Password doesn't match confirmation"
 
   Scenario: Logging in
-    Given there is a user "eliza@example.com" with password "foobar"
+    Given there is a user "eliza" with password "foobar"
     When I go to the homepage
     And I click "Sign In"
-    And I fill in "eliza@example.com" for "Email"
+    And I fill in "eliza" for "Username"
     And I fill in "foobar" for "Password"
     And I click "Sign in"
     Then I should see "You are now signed in."
 
   Scenario: Logging in with incorrect password
-    Given there is a user "eliza@example.com" with password "notfoobar"
+    Given there is a user "eliza" with password "notfoobar"
     When I go to the homepage
     And I click "Sign In"
     And I fill in "eliza@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I click "Sign in"
-    Then I should see "Incorrect email or password"
+    Then I should see "Incorrect login or password"
     And the "Email" field should contain "eliza@example.com"
 
   @wip
