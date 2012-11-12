@@ -45,4 +45,6 @@ class TopicsController < ApplicationController
     @topic = @book.topics.find(params[:id])
   end
 
+
+
 end
