@@ -30,10 +30,19 @@
     </div>
   </header>
   <section class="row">
-    <nav class="clearfix">
-        <ul class="nav-bar">
+    <nav class="clearfix top-bar">
+        <ul class="left">
           <li><%= link_to "Books", :books %></li>
           <li><%= link_to "New Book", new_book_path %></li>
+        </ul>
+        <ul class="right">
+          <li class="divider show-for-medium-and-up"></li>
+          <%- if user_signed_in? %>
+            <li class="right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <%- else %>
+            <li class="right"><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li class="right"><%= link_to "Sign In", new_user_session_path %></li>
+          <%-end %>
         </ul>
     </nav>
   </section>

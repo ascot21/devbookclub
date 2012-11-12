@@ -1,5 +1,4 @@
 Feature: User authentication
-
   Scenario: Signed out users see appropriate links
     Given I am on the homepage
     Then I should see "Sign In"
@@ -50,6 +49,7 @@ Feature: User authentication
     Then I should see "Incorrect email or password"
     And the "Email" field should contain "eliza@example.com"
 
+  @wip
   Scenario: Logging out
     Given I am signed in
     And I am on the homepage
