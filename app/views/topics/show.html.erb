@@ -10,13 +10,25 @@
       <a href="<%= url_for(@book.buy_link) %>" class="right" target="blank">Buy the Book</a>
     </div>
   </div>
-  <div class="">
+  <div>
     <h4>Topic</h4>
-      <h5><%= @topic.title %></h5>
-      <p><%= @topic.body %></p>
+      <div class="alert-box secondary">
+        <h4><%= @topic.title %></h4>
+        <p><%= @topic.body %></p>
+      </div>
   </div>
+  <%- if user_signed_in? %>
+  <div class="">Comments go here</div>
+  <%- else %>
+  <div class="alert-box secondary">You must be signed in to view comments. <%= link_to "Sign In", new_user_session_path %></div>
+  <%- end %>
 </div>
 <div class="four columns panel">
   <h5>Other Topics Of This Book</h5>
-  <%= render :partial => "topic_list", :object => @book.topics.related %>
+  <!--<%= render :partial => "topic_list", :object => @book.topics %>-->
+  <ul class="side-nav">
+    <% @book.topics.each do |topic| %>
+      <li><%= link_to topic.title, [@book, topic] %></li>
+    <% end %>
+  </ul>
 </div>

@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 
   before_filter :set_book
   before_filter :lookup_topic, :except => [:new,:create]
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     @topics = Topic.all
@@ -29,10 +30,6 @@ class TopicsController < ApplicationController
       flash[:error] = @topic.errors.full_messages.join
       render :edit
     end
-  end
-
-  def show
-    lookup_topic
   end
 
   private

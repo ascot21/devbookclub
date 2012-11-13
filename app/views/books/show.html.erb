@@ -2,7 +2,9 @@
   <div class="row book">
     <div class="four columns">
       <img src="http://placehold.it/200x300">
+      <%- if user_signed_in? %>
       <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+      <% end %>
     </div>
     <div class="eight columns">
       <h3 class="subheader"><%= @book.title %></h3>
@@ -12,7 +14,9 @@
   </div>
   <div class="">
       <h4>Topics</h4>
-      <p><%= link_to "Add Topic", new_book_topic_path(@book), :class => "right" %></p>
+      <% if user_signed_in? %>
+        <p><%= link_to "Add Topic", new_book_topic_path(@book), :class => "right" %></p>
+      <% end %>
       <table class="twelve">
         <thead>
           <tr>

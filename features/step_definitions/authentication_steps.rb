@@ -2,8 +2,8 @@ When /^I sign out$/ do
   step %{I click "Sign Out"}
 end
 
-Given /^there is a user "(.*?)" with password "(.*?)"$/ do |email,login, password|
-  @user = Fabricate(:user, email: email,login: login, password: password, password_confirmation: password)
+Given /^there is a user "(.*?)" with password "(.*?)"$/ do |login, password|
+  @user = Fabricate(:user, login: login, password: password, password_confirmation: password)
 end
 
 Given /^I am signed in as "(.*?)"$/ do |login|
@@ -20,9 +20,9 @@ def sign_in_as user
   steps %Q{
     Given I am on the homepage
     When I click "Sign In"
-    And I fill in "#{user.login}" for "Login"
+    And I fill in "#{user.username}" for "Login"
     And I fill in "password" for "Password"
     And I click "Sign in"
-    Then I should see "You are now signed in."
+    Then I should see the alert "You are now signed in."
   }
 end

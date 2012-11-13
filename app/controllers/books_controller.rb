@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   before_filter :lookup_book
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     @books = Book.all

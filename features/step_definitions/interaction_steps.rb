@@ -18,8 +18,8 @@ Then /^I should see the link "(.*?)"$/ do |title_text|
   page.should have_css("a", text: title_text)
 end
 
-Then /^I should see the alert "(.*?)"$/ do |title_text|
-  page.should have_css(".alert-box", text: title_text)
+Then /^I should see the alert "(.*?)"$/ do |alert_text|
+  page.should have_css("div.alert-box", text: alert_text)
 end
 
 When /^I fill in "(.*?)" for "(.*?)"$/ do |text, field_label|
