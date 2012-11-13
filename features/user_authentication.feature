@@ -51,7 +51,6 @@ Feature: User authentication
     Then I should see "Incorrect login or password"
     And the "Login" field should contain "adam"
 
-  @wip
   Scenario: Logging out
     Given I am signed in
     And I am on the homepage

@@ -25,6 +25,7 @@ end
 group :test, :development do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'email_spec'
 end
 
 group :test do

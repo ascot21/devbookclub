@@ -8,7 +8,10 @@ Feature: User creates book
   * Book must be publicly visible once saved
 
   Scenario: Happy Path
-    Given I am on the homepage
+    Given there are the following users:
+    | username | password | admin |
+    | adam     | password | true  |
+    And I am signed in as them
     And I click "New Book"
     Then I should see "Fill in your book info here"
     When I fill in "The Pragmatic Programmer" for "Title"

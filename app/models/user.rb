@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :registerable, :validatable, :confirmable
 
-  attr_accessible :email, :password, :password_confirmation, :username, :remember_me, :login
+  attr_accessible :email, :password, :password_confirmation, :username, :login
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'

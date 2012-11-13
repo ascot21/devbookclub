@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112204357) do
+ActiveRecord::Schema.define(:version => 20121113170631) do
 
   create_table "books", :force => true do |t|
     t.text     "title"
@@ -43,11 +43,15 @@ ActiveRecord::Schema.define(:version => 20121112204357) do
   add_index "topics", ["book_id"], :name => "index_topics_on_book_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",              :default => "", :null => false
-    t.string   "encrypted_password", :default => "", :null => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.string   "email",                :default => "",    :null => false
+    t.string   "encrypted_password",   :default => "",    :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "username"
+    t.boolean  "admin",                :default => false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
