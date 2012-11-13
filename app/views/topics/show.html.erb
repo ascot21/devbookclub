@@ -25,7 +25,6 @@
 </div>
 <div class="four columns panel">
   <h5>Other Topics Of This Book</h5>
-  <!--<%= render :partial => "topic_list", :object => @book.topics %>-->
   <ul class="side-nav">
     <% @book.topics.each do |topic| %>
       <li><%= link_to topic.title, [@book, topic] %></li>
