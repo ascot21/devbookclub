@@ -3,4 +3,5 @@ Fabricator(:user) do
   username "eliza"
   password "password"
   password_confirmation "password"
+  confirmed_at Time.now
 end

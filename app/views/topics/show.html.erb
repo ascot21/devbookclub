@@ -2,7 +2,9 @@
   <div class="row book">
     <div class="four columns">
       <img src="http://placehold.it/200x300">
+      <% admins_only do %>
       <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+      <% end %>
     </div>
     <div class="eight columns">
       <h3 class="subheader"><%= @book.title %></h3>
@@ -15,14 +17,19 @@
       <div class="alert-box secondary">
         <h4><%= @topic.title %></h4>
         <p><%= @topic.body %></p>
+        <% admins_only do %>
+          <p><%= link_to "Edit Topic", edit_book_topic_path(@book) %></p>
+        <% end %>
       </div>
   </div>
+
   <%- if user_signed_in? %>
-  <div class="">Comments go here</div>
+    <div class="">Comments go here</div>
   <%- else %>
-  <div class="alert-box secondary">You must be signed in to view comments. <%= link_to "Sign In", new_user_session_path %></div>
+    <div class="alert-box secondary">You must be signed in to view comments. <%= link_to "Sign In", new_user_session_path %></div>
   <%- end %>
 </div>
+
 <div class="four columns panel">
   <h5>Other Topics Of This Book</h5>
   <ul class="side-nav">

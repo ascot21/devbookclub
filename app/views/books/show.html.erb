@@ -2,7 +2,7 @@
   <div class="row book">
     <div class="four columns">
       <img src="http://placehold.it/200x300">
-      <%- if user_signed_in? %>
+      <%- admins_only do %>
       <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
       <% end %>
     </div>

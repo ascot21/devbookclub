@@ -7,11 +7,19 @@ Feature: User creates book
   * Book must have title,description and a buy_link
   * Book must be publicly visible once saved
 
-  Scenario: Happy Path
-    Given there are the following users:
-    | username | password | admin |
-    | adam     | password | true  |
-    And I am signed in as them
+  @wip
+  Scenario: Non-admin should not be able to create book
+    Given the following users:
+    | username | password | email                | admin |
+    | adam     | password | adam@devbookclub.com | false  |
+    And I am signed in
+    And I should not see "New Book"
+
+  Scenario: Happy Path (admin user)
+    Given the following users:
+    | username | password | email                | admin |
+    | adam     | password | adam@devbookclub.com | true  |
+    And I am signed in
     And I click "New Book"
     Then I should see "Fill in your book info here"
     When I fill in "The Pragmatic Programmer" for "Title"

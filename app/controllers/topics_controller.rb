@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
 
   before_filter :set_book
   before_filter :lookup_topic, :except => [:new,:create]
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authorize_admin!, :except => [:index, :show]
 
   def index
     @topics = Topic.all

@@ -6,6 +6,10 @@ Given /^there is a user "(.*?)" with password "(.*?)"$/ do |login, password|
   @user = Fabricate(:user, login: login, password: password, password_confirmation: password)
 end
 
+Given /^there is a user "(.*?)" with password "(.*?)" $/ do |login, password|
+  @user = Fabricate(:user, login: login, password: password, password_confirmation: password)
+end
+
 Given /^I am signed in as "(.*?)"$/ do |login|
   @user = Fabricate(:user, login: login)
   sign_in_as @user
