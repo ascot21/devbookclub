@@ -7,7 +7,6 @@ Feature: User creates book
   * Book must have title,description and a buy_link
   * Book must be publicly visible once saved
 
-  @wip
   Scenario: Non-admin should not be able to create book
     Given the following users:
     | username | password | email                | admin |
