@@ -15,6 +15,11 @@ Given /^I am signed in as "(.*?)"$/ do |login|
   sign_in_as @user
 end
 
+Given /^I am signed in as an admin$/ do
+  @user = Fabricate(:user, :admin => true)
+  sign_in_as @user
+end
+
 Given /^I am signed in$/ do
   @user = Fabricate(:user)
   sign_in_as @user

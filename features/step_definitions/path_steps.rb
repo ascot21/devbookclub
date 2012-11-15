@@ -4,6 +4,10 @@ def path_to(page_name)
     '/'
   when "that book's page"
     book_path(@book)
+  when "the admin page"
+    '/admin'
+  when "/users/sign_in"
+    '/users/sign_in'
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
