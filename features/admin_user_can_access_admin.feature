@@ -1,4 +1,3 @@
-@wip
 Feature: Signing in to admin
   In order to be able to administer the site
   As a admin user
