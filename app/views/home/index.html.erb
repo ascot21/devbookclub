@@ -5,5 +5,10 @@
   </div>
   <div class="four columns">
     <h3>Recent Books</h3>
+    <ul>
+      <% @recent_books.each do |book| %>
+        <li><%= book.title %></li>
+      <% end %>
+    </ul>
   </div>
 </section>
