@@ -6,7 +6,9 @@ Devbookclub::Application.routes.draw do
   root :to => 'home#index'
 
   resources :books do
-    resources :topics
+    resources :topics do
+      resources :comments
+    end
   end
 
   # The priority is based upon order of creation:

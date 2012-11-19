@@ -22,12 +22,16 @@
         <% end %>
       </div>
   </div>
-
-  <%- if user_signed_in? %>
-    <div class="">Comments go here</div>
-  <%- else %>
-    <div class="alert-box secondary">You must be signed in to view comments. <%= link_to "Sign In", new_user_session_path %></div>
-  <%- end %>
+  <div class="">
+    <h4>Comments</h4>
+    <%= render @topic.comments %>
+    <%- if user_signed_in? %>
+      <h5>Add your comment</h5>
+      <%= render 'comments/form' %>
+    <%- else %>
+        <div class="alert-box secondary">You must be signed in to view comments. <%= link_to "Sign In", new_user_session_path %></div>
+      <%- end %>
+  </div>
 </div>
 
 <div class="four columns panel">

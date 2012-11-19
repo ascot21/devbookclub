@@ -32,6 +32,10 @@ class TopicsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+  end
+
   private
 
   def set_book
