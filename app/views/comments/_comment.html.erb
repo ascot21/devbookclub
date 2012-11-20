@@ -1,6 +1,11 @@
 <div class="comment">
   <p><%= comment.body %></p>
-  <h6>By: <%= comment.commenter %></h6>
-  <%= link_to "Reply", :root,:class => "button tiny radius" %>
-
+  <div class="row">
+    <div class="ten columns">
+      <p><strong><%= link_to comment.commenter, "#" %></strong> - <em class="date">Posted on <%= comment.created_at %></em> </p>
+    </div>
+    <div class="two columns text-right">
+      <%= link_to "Reply", :root,:class => "button tiny radius" %>
+    </div>
+  </div>
 </div>

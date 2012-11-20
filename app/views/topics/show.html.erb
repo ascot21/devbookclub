@@ -24,7 +24,7 @@
   </div>
   <div class="">
     <h4>Comments</h4>
-    <%= render @topic.comments %>
+    <%= render @topic.comments.order("created_at ASC") %>
     <%- if user_signed_in? %>
       <h5>Add your comment</h5>
       <%= render 'comments/form' %>
