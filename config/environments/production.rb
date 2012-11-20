@@ -51,6 +51,9 @@ Devbookclub::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  #Setup production mailer
+  config.action_mailer.default_url_options = { :host => 'devbookclub.heroku.com' }
+
   # Enable threaded mode
   # config.threadsafe!
 
