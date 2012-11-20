@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @book = Book.find(params[:book_id])
     @topic = Topic.find(params[:topic_id])
     @comment  = @topic.comments.new(params[:comment])
-
+    @comment.commenter = current_user
     if @comment.save
       flash[:notice] = "Your comment was added."
       redirect_to book_topic_path(@book,@topic)
