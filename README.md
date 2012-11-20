@@ -1,5 +1,6 @@
 Dev Bookclub
 ============
+THIS IS A WORK IN PROGRESS
 
 A book club app for developers
 
