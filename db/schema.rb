@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120025220) do
+ActiveRecord::Schema.define(:version => 20121120043644) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(:version => 20121120025220) do
     t.string   "commenter"
     t.text     "body"
     t.integer  "topic_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "commenter_id"
+    t.integer  "parent_comment_id"
   end
 
   add_index "comments", ["topic_id"], :name => "index_comments_on_topic_id"

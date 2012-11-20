@@ -1,5 +1,5 @@
 <%= form_for [@book,@topic,@comment] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body, :size => 20 %>
-  <%= f.submit %>
+  <%= f.text_field :body, :size => 20, :placeholder => "Submit a reply" %>
+  <%= f.hidden_field :parent_comment_id %>
+  <%= f.submit submit_text %>
 <% end %>
