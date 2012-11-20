@@ -16,7 +16,6 @@ Devbookclub::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
-  config.assets.initialize_on_precompile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -47,7 +46,7 @@ Devbookclub::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( application.css application.js )
+  # config.assets.precompile += %w( application.css application.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
