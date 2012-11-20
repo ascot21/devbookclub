@@ -2,10 +2,11 @@
   <p><%= comment.body %></p>
   <div class="row">
     <div class="ten columns">
-      <p><strong><%= link_to comment.commenter.username, "#" %></strong> - <em class="date">Posted on <%= comment.created_at %></em> </p>
+      <p><strong><%= link_to comment.commenter.username, "#" %></strong> <em class="date">Posted on <%= comment.created_at.to_formatted_s(:long_ordinal) %></em> </p>
+      <%= link_to "Reply", :root,:class => "button tiny radius" %>
     </div>
     <div class="two columns text-right">
-      <%= link_to "Reply", :root,:class => "button tiny radius" %>
+      <%= image_tag comment.commenter.gravatar_url, :class => "gravatar" %>
     </div>
   </div>
 </div>
