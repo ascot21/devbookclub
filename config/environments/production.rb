@@ -53,6 +53,7 @@ Devbookclub::Application.configure do
 
   #Setup production mailer
   config.action_mailer.default_url_options = { :host => 'devbookclub.heroku.com' }
+  config.action_mailer.perform_deliveries = true
 
   # Enable threaded mode
   # config.threadsafe!
