@@ -24,10 +24,10 @@
   </div>
   <div class="">
     <h4>Comments</h4>
-    <%= render @topic.comments.order("created_at ASC") %>
+    <%= render @topic.parent_comments.order("created_at ASC") %>
     <%- if user_signed_in? %>
       <h5>Add your comment</h5>
-      <%= render partial: 'comments/form', locals: { submit_text: "Create Comment", } %>
+      <%= render partial: 'comments/form', locals: { submit_text: "Create Comment", comment: @topic.comments.build} %>
     <%- else %>
         <div class="alert-box secondary">You must be signed in to comment. <%= link_to "Sign In", new_user_session_path %></div>
       <%- end %>
