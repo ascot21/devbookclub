@@ -1,4 +1,5 @@
 Fabricator(:topic) do
-  body "This chapter was great."
-
+  title "Chapter One"
+  body "What did you think of this chapter?"
+  book
 end

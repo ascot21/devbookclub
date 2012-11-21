@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
   validates_presence_of :body, :commenter
 
   belongs_to :commenter, class_name: "User"
+
   has_many :replies, class_name: 'Comment', foreign_key: 'parent_comment_id'
   belongs_to :parent_comment, class_name: 'Comment'
 

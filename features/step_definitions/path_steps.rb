@@ -4,6 +4,8 @@ def path_to(page_name)
     '/'
   when "that book's page"
     book_path(@book)
+  when "that topic's page"
+    book_topic_path(@topic)
   when "the admin page"
     '/admin'
   when "/users/sign_in"
