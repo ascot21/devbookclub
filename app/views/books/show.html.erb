@@ -33,5 +33,8 @@
   </div>
 </div>
 <div class="four columns panel">
-  recent comments will go here
+  <h4 class="subheader">Upcoming Topic</h4>
+  <% @book.topics.future.each do |topic| %>
+      <li><%= link_to topic.title, [@book, topic] %></li>
+    <% end %>
 </div>
