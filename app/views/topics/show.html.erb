@@ -12,17 +12,15 @@
       <a href="<%= url_for(@book.buy_link) %>" class="right" target="blank">Buy the Book</a>
     </div>
   </div>
-  <div>
+  <% if @topic.published? %>
     <h4>Topic</h4>
-      <div class="alert-box secondary">
+      <div class="panel secondary">
         <h4><%= @topic.title %></h4>
         <p><%= @topic.body %></p>
         <% admins_only do %>
           <p><%= link_to "Edit Topic", edit_book_topic_path(@book) %></p>
         <% end %>
       </div>
-  </div>
-  <% if @topic.published? %>
     <div class="">
       <h4>Comments</h4>
       <%= render @topic.parent_comments.order("created_at ASC") %>
@@ -34,7 +32,7 @@
         <%- end %>
     </div>
   <% else %>
-    <div class="alert-box secondary">This topic has not been published yet. Commenting will not be allowed until <%= @topic.publish_date %></div>
+    <div class="alert-box secondary">This topic has not been published yet. It will be on <%= @topic.publish_date %></div>
   <% end %>
 </div>
 
