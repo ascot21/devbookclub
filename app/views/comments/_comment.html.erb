@@ -1,4 +1,4 @@
-<div class="comment clearfix">
+<div class="comment clearfix" id="comment_<%= comment.id %>">
   <div class="left">
     <div class="gravatar">
       <%= image_tag comment.commenter.gravatar_url %>
@@ -11,14 +11,10 @@
     <div class="commentbody">
       <p><%= comment.body %></p>
       <%- if user_signed_in? %>
-        <%= link_to_function "Reply", "$(this).next('.replyform').slideToggle();",:class => "button secondary tiny radius" %>
+        <%= link_to "Reply", new_book_topic_comment_path(@book,@topic,:parent_comment_id => comment.id),id: "comment", :class => "button secondary tiny radius", :remote => true %>
       <%- end %>
-        <div class="replyform" style="display:none;">
-          <h6>Reply to <%= comment.commenter.username %></h6>
-            <%= render partial: 'comments/form', locals: { submit_text: "Post Reply", comment: comment.replies.build } %>
-        </div>
     </div>
-
     <%= render comment.replies %>
+
   </div>
 </div>

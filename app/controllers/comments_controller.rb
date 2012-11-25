@@ -14,4 +14,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def new
+    @book = Book.find(params[:book_id])
+    @topic = Topic.find(params[:topic_id])
+    @comment  = @topic.comments.new
+    @parent_comment = @topic.comments.find(params[:parent_comment_id])
+  end
+
 end

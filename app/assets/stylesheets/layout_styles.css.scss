@@ -18,6 +18,8 @@ body {
   display:block;
   margin-top: 20px;
   background: rgb(40,52,59); /* Old browsers */
+  font-size:12px;
+  p {font-size:12px;}
   #main{
     background:white;
     padding-top:20px;
@@ -77,14 +79,14 @@ transition:opacity 0.25s;
 
 .comment {
   display:block;
-  margin-bottom:25px;
+  margin-bottom:25px !important;
   .left {
-    width:16%;
+    width:12%;
     float:left;
     padding-right:10px;
   }
   .right {
-    width:84%;
+    width:88%;
     float:left;
   }
 }
