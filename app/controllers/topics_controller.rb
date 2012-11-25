@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   before_filter :authorize_admin!, :except => [:index, :show]
 
   def index
-    @topics = Topic.all
+    @topics = Topic.published
   end
 
   def create
