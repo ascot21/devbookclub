@@ -8,6 +8,9 @@
       <h5 class="subheader">Admin</h5>
     <% end %>
     <p>Member Since: <%= @user.created_at %><p>
+    <% if @user == current_user %>
+      <%= link_to "Edit Profile", edit_user_registration_path %>
+    <% end %>
 
   </div>
 </div>
