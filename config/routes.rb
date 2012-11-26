@@ -5,6 +5,8 @@ Devbookclub::Application.routes.draw do
 
   root :to => 'home#index'
 
+  resources :users, :only => [:index,:show]
+
   resources :books do
     resources :topics do
       resources :comments

@@ -6,7 +6,7 @@
   </div>
   <div class="right">
     <div class="commentheader">
-      <span><strong><%= link_to comment.commenter.username, "#" %></strong> <em class="date">Posted on <%= comment.created_at.to_formatted_s(:long_ordinal) %></em> </span>
+      <span><strong><%= link_to comment.commenter.username, comment.commenter %></strong> <em class="date">Posted on <%= comment.created_at.to_formatted_s(:long_ordinal) %></em> </span>
     </div>
     <div class="commentbody">
       <p><%= comment.body %></p>
