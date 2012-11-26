@@ -16,10 +16,10 @@
 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
 	<!-- Included CSS Files -->
-	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/black-tie/jquery-ui.css","application" %>
+	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/black-tie/jquery-ui.css","animate", "application" %>
 
 	<!-- Included JS Files  -->
-	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js","application" %>
+	<%= javascript_include_tag "application", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
 
   <%= csrf_meta_tags %>
 </head>

@@ -79,7 +79,6 @@ transition:opacity 0.25s;
 
 .comment {
   display:block;
-  margin-bottom:25px !important;
   .left {
     width:12%;
     float:left;
@@ -121,6 +120,7 @@ transition:opacity 0.25s;
 }
 
 .commentbody {
+  margin-bottom:15px;
   background:#f3f3f3;
   border:1px solid #BBB;
   padding:10px;
