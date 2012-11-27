@@ -5,5 +5,7 @@
   <%= f.text_area :description, :rows => 15, :placeholder => "The synopsis/overview of the book goes here." %>
   <%= f.label :buy_link %>
   <%= f.text_field :buy_link, :size => 20, :placeholder => "http://www.example.com" %>
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
   <%= f.submit submit_text%>
 <%- end %>

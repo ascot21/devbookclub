@@ -4,7 +4,11 @@ class BooksController < ApplicationController
   before_filter :authorize_admin!, :except => [:index, :show]
 
   def index
-    @books = Book.all
+    if params[:tag]
+      @books = Book.tagged_with(params[:tag])
+    else
+      @books = Book.all
+    end
   end
 
   def create

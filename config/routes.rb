@@ -13,6 +13,8 @@ Devbookclub::Application.routes.draw do
     end
   end
 
+  get 'tags/:tag', to: 'books#index', as: :tag
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
