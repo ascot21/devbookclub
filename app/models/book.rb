@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessible :buy_link, :description, :title, :tag_list
+  attr_accessible :buy_link, :description, :title, :tag_list, :tag_ids
   validates_presence_of :buy_link, :description, :title
 
   has_many :topics
