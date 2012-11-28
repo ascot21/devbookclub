@@ -1,14 +1,28 @@
-<%= form_for @book do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, :placeholder => "Title Goes Here" %>
-  <%= f.label :description %>
-  <%= f.text_area :description, :rows => 15, :placeholder => "The synopsis/overview of the book goes here." %>
-  <%= f.label :buy_link %>
-  <%= f.text_field :buy_link, :size => 20, :placeholder => "http://www.example.com" %>
-  <%= hidden_field_tag "book[tag_ids][]", nil %>
-  <% Tag.all.each do |tag| %>
-    <%= check_box_tag "book[tag_ids][]", tag.id, @book.tag_ids.include?(tag.id), id: dom_id(tag) %>
-    <%= label_tag dom_id(tag), tag.name %><br>
-  <% end %>
-  <%= f.submit submit_text%>
-<%- end %>
+
+<div class="row">
+  <div class="nine columns">
+    <%= form_for @book do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, :placeholder => "Title Goes Here" %>
+      <%= f.label :description %>
+      <%= f.text_area :description, :rows => 15, :placeholder => "The synopsis/overview of the book goes here." %>
+      <%= f.label :buy_link %>
+      <%= f.text_field :buy_link, :size => 20, :placeholder => "http://www.example.com" %>
+  </div>
+  <div class="three columns">
+    <div class="box">
+      <div class="header">Categories</div>
+      <div class="body">
+      <%= hidden_field_tag "book[tag_ids][]", nil %>
+      <% Tag.all.each do |tag| %>
+        <label for="<%= dom_id(tag) %>">
+        <%= check_box_tag "book[tag_ids][]", tag.id, @book.tag_ids.include?(tag.id), id: dom_id(tag) %>
+        <%= tag.name %>
+        </label>
+      <% end %>
+      <%= f.submit submit_text%>
+    <%- end %>
+      </div>
+    </div>
+  </div>
+</div>

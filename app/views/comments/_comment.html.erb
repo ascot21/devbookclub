@@ -5,10 +5,10 @@
     </div>
   </div>
   <div class="right">
-    <div class="commentheader">
+    <div class="header">
       <span><strong><%= link_to comment.commenter.username, comment.commenter %></strong> <em class="date">Posted on <%= comment.created_at.to_formatted_s(:long_ordinal) %></em> </span>
     </div>
-    <div class="commentbody">
+    <div class="body">
       <p><%= comment.body %></p>
       <%- if user_signed_in? %>
         <%= link_to "Reply", new_book_topic_comment_path(@book,@topic,:parent_comment_id => comment.id),id: "comment", :class => "button secondary tiny radius", :remote => true %>
