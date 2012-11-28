@@ -1,8 +1,18 @@
-<div class="eight columns">
+<div class="nine columns">
   <ul class="block-grid three-up">
+    <h4 class="subheader"><%= @category %> Books </h4>
     <%= render @books %>
   </ul>
 </div>
-<div class="four columns">
-  lkjasdlfkj
+<div class="three columns">
+    <div class="box">
+      <div class="header">Categories</div>
+      <div class="body">
+        <ul>
+        <% for tag in Tag.order("name") %>
+          <li><%= link_to_unless(params[:tag_id].to_i == tag.id, tag.name, tag_path(tag.name)) %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
 </div>

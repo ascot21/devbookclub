@@ -6,8 +6,10 @@ class BooksController < ApplicationController
   def index
     if params[:tag]
       @books = Book.tagged_with(params[:tag])
+      @category = params[:tag]
     else
       @books = Book.all
+      @category = "All"
     end
   end
 
