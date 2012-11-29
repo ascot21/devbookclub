@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="nine columns">
-    <%= form_for @book do |f| %>
+    <%= form_for @book, :html => { :multipart => true } do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, :placeholder => "Title Goes Here" %>
       <%= f.label :description %>
@@ -10,6 +10,17 @@
       <%= f.text_field :buy_link, :size => 20, :placeholder => "http://www.example.com" %>
   </div>
   <div class="three columns">
+    <div class="box">
+      <div class="header">Upload an Image</div>
+      <div class="body">
+        <% if @book.coverimage.exists? %>
+          <%= image_tag @book.coverimage %>
+          <%= f.file_field :coverimage %>
+        <% else %>
+          <%= f.file_field :coverimage %>
+          <% end %>
+      </div>
+    </div>
     <div class="box">
       <div class="header">Categories</div>
       <div class="body">

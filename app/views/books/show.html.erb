@@ -1,7 +1,7 @@
 <div class="eight columns">
   <div class="row book">
     <div class="four columns">
-      <img src="http://placehold.it/200x300">
+      <%= image_tag @book.coverimage.url(:medium) %>
       <%- admins_only do %>
       <p><%= link_to "Edit Book", edit_book_path(@book) %></p>
       <% end %>
