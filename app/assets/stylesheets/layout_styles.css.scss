@@ -52,16 +52,22 @@ header {
 .top-bar {margin:0;background:#252525;}
 .top-bar li {color:white;}
 
+.book {
+  h3 {
+    margin-top: 0px;
+  }
+}
+
 .booklist h6 {color:white;}
 .img-wrap{
-height:271px;
+
 overflow:hidden;
 position:relative;
-width:195px;
+
 }
 .img-overlay{
 background-color:#000;
-bottom:0;
+bottom:8px;
 color:#fff;
 opacity:0;
 filter: alpha(opacity = 0);
@@ -69,7 +75,7 @@ position:absolute;
 width:100%;
 z-index:1000;
 }
-.img-overlay span {display: block;padding:8px;}
+.img-overlay span {display: block;padding:10px;}
 
 .img-wrap:hover .img-overlay{
 opacity:0.75;

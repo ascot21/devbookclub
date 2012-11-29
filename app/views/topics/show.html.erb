@@ -22,7 +22,7 @@
         <% end %>
       </div>
     <div class="">
-      <h4>Comments</h4>
+      <h4>Join the Discussion</h4>
       <%= render @topic.parent_comments.order("created_at ASC") %>
       <%- if user_signed_in? %>
         <h5>Add your comment</h5>
