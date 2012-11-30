@@ -1,1 +1,1 @@
-$('#comment_<%= @parent_comment.id %> .right .commentbody').after("<div class='replyform animated fadeIn'><h6>Reply to <%= @parent_comment.commenter.username %></h6><%= j render partial: 'comments/form', locals: { submit_text: 'Post Reply', comment: @parent_comment.replies.build } %></div>");
+$('#comment_<%= @parent_comment.id %> .right .body').after("<div class='replyform animated fadeIn'><h6>Reply to <%= @parent_comment.commenter.username %></h6><%= j render partial: 'comments/form', locals: { submit_text: 'Post Reply', comment: @parent_comment.replies.build } %></div>");
