@@ -15,5 +15,7 @@
 //= require foundation
 //= require_tree .
 $(function() {
-    $( "#topic_publish_date" ).datepicker({ dateFormat: "yy-mm-dd",defaultDate: Date.today });
+  $( "#topic_publish_date" ).datepicker({ dateFormat: "yy-mm-dd",defaultDate: Date.today });
 });
+
+

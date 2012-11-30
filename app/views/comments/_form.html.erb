@@ -1,3 +1,6 @@
+<div class="formatting">
+  <p>Use Markdown for formatting. <%= link_to_function "See examples.", "$('.markdown_examples').reveal();", :class => "markdown_link" %></p>
+</div>
 <%= form_for [@book,@topic,comment] do |f| %>
   <%= f.text_area :body,:size => "5x5", :placeholder => "Write a comment" %>
   <%= f.hidden_field :parent_comment_id %>
