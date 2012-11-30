@@ -1,14 +1,13 @@
 <section class="row">
   <div class="eight columns" id="welcome">
-    <h1>Welcome</h1>
-    <p>This is a work-in-progress app that allows people to discuss books together as they read them.</p>
+    <h1>Welcome to devBookClub</h1>
+    <h3 class="subheader">devBookClub allows people to discuss books together as they read them.</h3>
+    <p>This is a work-in-progress open-source project.  If you'd like to contribute, check it out on <%= link_to "Github", "https://github.com/ascot21/devbookclub", :target => "blank" %>, and follow the contribution instructions.</p>
   </div>
   <div class="four columns">
     <h3>Recent Books</h3>
-    <ul>
-      <% @recent_books.each do |book| %>
-        <li><%= book.title %></li>
-      <% end %>
+    <ul class="block-grid two-up">
+      <%= render @recent_books%>
     </ul>
   </div>
 </section>
