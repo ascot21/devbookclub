@@ -25,4 +25,12 @@ module ApplicationHelper
     markdown_to_html.render(text).html_safe
   end
 
+  def title(*parts)
+    unless parts.empty?
+      content_for :title do
+        (parts << "devBookClub").join(" | ") unless parts.empty?
+      end
+    end
+  end
+
 end
