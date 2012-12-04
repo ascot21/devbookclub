@@ -1,4 +1,3 @@
-@wip
 Feature: User comments on a book topic
   As a person reading a book topic
   In order to contribute to the discussion
