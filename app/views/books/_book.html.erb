@@ -1,6 +1,7 @@
 <li class="booklist">
   <div class="img-wrap">
-    <%= link_to image_tag(book.coverimage.url(:medium)), book, :class => "bookimg animated fadeInUp" %>
+    <%= link_to image_tag(book.coverimage.url(:medium)), book,
+      :class => "bookimg animated fadeInUp", :id => "#{book.title.gsub(/\s/, '-')}" %>
     <div class="img-overlay">
       <span><%= book.title %></span>
     </div>

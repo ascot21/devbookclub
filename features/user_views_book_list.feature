@@ -1,25 +1,23 @@
 Feature: User view book list
 
-  Scenario:
+  Scenario: User can view books index
     Given the following books:
-      | title | body         | buy_link         |
-      | Foo   | Foo Bar      | www.example.com  |
-      | Hello | Hello, World | www.example2.com |
-    When I go to the homepage
-    Then I should see the title "Foo"
-    And I should see "Bar"
-    And I should see "Buy the book"
-    And I should see the title "Hello"
-    And I should see "World"
-    And I should see "Buy the book"
+      | title | description  | buy_link         | coverimage_file_name  |
+      | Foo   | Foo Bar      | www.example.com  | image.jpeg            |
+      | Hello | Hello, World | www.example2.com | image.jpeg            |
+    And I am on the homepage
+    When I press "Books"
+    Then I should see "All Books"
+    Then I should see the span "Foo"
+    And I should see the span "Hello"
 
   Scenario: Linking to/from book show page
-    Given the following book:
-      | title    | Foo             |
-      | body     | Foo Bar         |
-      | buy_link | www.example.com |
-    And I am on the homepage
-    When I click "Foo"
-    Then I should be on that blog book's page
-    When I click "View All books"
-    Then I should be on the homepage
+    Given the following books:
+      | title | description  | buy_link         | coverimage_file_name  |
+      | Foo   | Foo Bar      | www.example.com  | image.jpeg            |
+    And I am on the home page
+    When I press "Books"
+    And I click "Foo"
+    Then I should be on that book's page
+    When I click "Books"
+    Then I should be on /books
