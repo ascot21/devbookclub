@@ -1,7 +1,7 @@
 Fabricator(:user) do
   email { sequence(:email) { |i| "user#{i}@example.com" } }
-  username "eliza"
-  password "password"
-  password_confirmation "password"
+  username "adam"
+  password "foobar"
+  password_confirmation "foobar"
   confirmed_at Time.now
 end

@@ -1,3 +1,4 @@
+@wip
 Feature: User creates book
   As a user
   In order to start a book discussion
@@ -10,14 +11,14 @@ Feature: User creates book
   Scenario: Non-admin should not be able to create book
     Given the following users:
     | username | password | email                | admin |
-    | adam     | password | adam@devbookclub.com | false  |
+    | adam     | foobar | adam@devbookclub.com | false  |
     And I am signed in
     And I should not see "New Book"
 
   Scenario: Happy Path (admin user)
     Given the following users:
     | username | password | email                | admin |
-    | adam     | password | adam@devbookclub.com | true  |
+    | adam     | foobar | adam@devbookclub.com | true  |
     And I am signed in
     And I click "New Book"
     Then I should see "Fill in your book info here"

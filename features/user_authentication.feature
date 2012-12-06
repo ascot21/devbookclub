@@ -20,7 +20,7 @@ Feature: User authentication
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
     And I click "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
+    Then I should see "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
 
   Scenario: Signing up with non-matching passwords
     Given I am on the homepage
