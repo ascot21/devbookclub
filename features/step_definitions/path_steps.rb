@@ -8,6 +8,8 @@ def path_to(page_name)
     book_topic_path(@book,@topic)
   when "the admin page"
     '/admin'
+  when "/books"
+    '/books'
   when "/users/sign_in"
     '/users/sign_in'
   else
