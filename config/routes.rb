@@ -13,6 +13,7 @@ Devbookclub::Application.routes.draw do
     end
   end
 
+  resources :tags, :only => [:new,:create]
   get 'tags/:tag', to: 'books#index', as: :tag
 
   # The priority is based upon order of creation:
