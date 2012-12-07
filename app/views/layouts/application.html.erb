@@ -34,7 +34,13 @@
         <ul class="left">
           <li><%= link_to "Books", :books %></li>
           <%= admins_only do %>
-          <li><%= link_to "Admin", admin_root_path %></li>
+          <li class="has-dropdown">Admin
+            <ul class="dropdown">
+              <li><%= link_to "Dashboard", admin_root_path %></li>
+              <li><%= link_to "New Book", new_book_path %></li>
+            </ul>
+
+          </li>
           <% end %>
         </ul>
         <ul class="right">

@@ -18,7 +18,7 @@ Feature: User creates book
   Scenario: Happy Path (admin user)
     Given the following users:
     | username | password | email                | admin |
-    | adam     | foobar | adam@devbookclub.com | true  |
+    | adam     | foobar  | adam@devbookclub.com | true  |
     And I am signed in
     And I click "New Book"
     Then I should see "Fill in your book info here"

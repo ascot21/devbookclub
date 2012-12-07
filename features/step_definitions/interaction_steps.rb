@@ -44,3 +44,4 @@ Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   field_value = (field.tag_name == 'textarea') ? field.text[1..-1] || "" : field.value
   field_value.should == text
 end
+
