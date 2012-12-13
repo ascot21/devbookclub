@@ -26,13 +26,10 @@
       <div class="header">Categories</div>
       <div class="body">
       <%= hidden_field_tag "book[tag_ids][]", nil %>
-      <% Tag.all.each do |tag| %>
-        <label for="<%= dom_id(tag) %>">
-        <%= check_box_tag "book[tag_ids][]", tag.id, @book.tag_ids.include?(tag.id), id: dom_id(tag) %>
-        <%= tag.name %>
-        </label>
-      <% end %>
-      <%= link_to "Add Category", new_tag_path, id: "new_category", :remote => true %>
+      <div id="tagslist">
+        <%= render @tags %>
+        <%= link_to "Add Category", new_tag_path(:book_id => @book.id), id: "new_category", :remote => true %>
+      </div>
       </div>
       <%= f.submit submit_text, :class => "button" %>
     <%- end %>

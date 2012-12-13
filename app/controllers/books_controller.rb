@@ -42,8 +42,10 @@ class BooksController < ApplicationController
     if params[:id]
       @book = Book.find(params[:id])
       @topics = @book.topics
+      @tags = Tag.all
     else
       @book = Book.new(params[:book])
+      @tags = Tag.all
     end
   end
 

@@ -1,0 +1,8 @@
+<label for="<%= dom_id(tag) %>">
+  <% if @book.present? %>
+    <%= check_box_tag "book[tag_ids][]", tag.id, @book.tag_ids.include?(tag.id), id: dom_id(tag) %>
+  <% else %>
+    <%= check_box_tag "book[tag_ids][]", tag.id, true, id: dom_id(tag) %>
+  <% end %>
+  <%= tag.name %>
+</label>

@@ -1,4 +1,4 @@
-class Book < ActiveRecord::Base
+  class Book < ActiveRecord::Base
   attr_accessible :buy_link, :description, :title, :tag_list, :tag_ids, :coverimage
   has_attached_file :coverimage, :styles => { :medium => "220x500>" },
     :url  => "/assets/books/:id/:style/:basename.:extension",
@@ -13,6 +13,7 @@ class Book < ActiveRecord::Base
   has_many :topics
   has_many :taggings
   has_many :tags, through: :taggings
+
 
   scope :recent, limit(5).order("created_at DESC")
 
