@@ -1,4 +1,3 @@
-@wip
 Feature: User creates book
   As a user
   In order to start a book discussion
